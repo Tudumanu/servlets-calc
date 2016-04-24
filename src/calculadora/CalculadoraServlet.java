@@ -27,8 +27,10 @@ public class CalculadoraServlet extends HttpServlet {
         Double n2 = 0.0;
 
         try {
-            n1 = Double.parseDouble(val1);
-            n2 = Double.parseDouble(val2);
+            if(val1.length() > 0)
+                n1 = Double.parseDouble(val1);
+            if(val2.length() > 0)
+                n2 = Double.parseDouble(val2);
 
             resultContent = calcula(op,n1,n2);
         } catch (NumberFormatException e) {
